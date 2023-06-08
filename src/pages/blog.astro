@@ -1,23 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+const pageTitle = "My Astro Learning Blog";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-		<h1 class ="text-3xl font-bold underline">My Astro Learning Blog</h1>
-		<p>This is where I will post about my journey learning Astro.</p>
-</body>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-	</main>
-</Layout>
+<Layout title={pageTitle}>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width" />
+		</head>
+		<body>
+			<a href="/">Home</a>
+			<a href="/about/">About</a>
+			<a href="/blog/">Blog</a>
 
+			<h1>{pageTitle}</h1>
+			<p>This is where I will post about my journey learning Astro.</p>
+			<ul>
+				<li><a href="/posts/post-1/">Post 1</a></li>
+				<li><a href="/posts/post-2/">Post 2</a></li>
+				<li><a href="/posts/post-3/">Post 3</a></li>
+			</ul>
+		</body>
+	</html>
+</Layout>
 
 <style>
 	main {
