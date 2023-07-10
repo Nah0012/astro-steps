@@ -2,16 +2,74 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 const allPosts = await Astro.glob("../pages/posts/*.md");
-const pageTitle = "My Astro Learning Blog";
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const years = [
+	...new Set(allPosts.map((post) => post.frontmatter.years).flat()),
+];
+const pageTitle = "nimoca's Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<p>This is where I will post about my journey learning Astro.</p>
-	<ul>
-		{
-			allPosts.map((post) => (
-				<BlogPost url={post.url} title={post.frontmatter.title} />
-			))
-		}
-	</ul>
+	<div class="main">
+		<p class="Keytext">nimoca's Blog.</p>
+
+		<p class="archive">Archive</p>
+		<div class="years">
+			{
+				years.map((year) => (
+					<p class="year">
+						<a href={`/years/${year}`}>{year}</a>
+					</p>
+				))
+			}
+		</div>
+		<ul class="posts">
+			{
+				allPosts.map((post) => (
+					<BlogPost url={post.url} title={post.frontmatter.title} />
+				))
+			}
+		</ul>
+	</div>
 </BaseLayout>
+
+<style>
+	@font-face {
+		font-family: "DotGothic16";
+		src: url("/fonts/DotGothic16-Regular.ttf");
+	}
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		text-align: center;
+		font-family: "DotGothic16", sans-serif;
+	}
+	.Keytext {
+		font-size: 2.4rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.4px;
+		margin-top: 15%;
+		text-align: center;
+	}
+	.archive {
+		font-size: 1.6rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.4px;
+		text-align: center;
+	}
+	.years {
+		display: flex;
+		justify-content: center;
+		gap: 1.6rem;
+	}
+	.posts {
+		font-size: 1rem;
+		font-weight: 700;
+		line-height: 1.5;
+		letter-spacing: 0.4px;
+		text-align: center;
+	}
+</style>

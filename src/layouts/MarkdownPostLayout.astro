@@ -4,26 +4,35 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-	<p><em>{frontmatter.description}</em></p>
-	<p>{frontmatter.pubDate.slice(0, 10)}</p>
+	<div class="main">
+		<p><em>{frontmatter.description}</em></p>
+		<p>{frontmatter.pubDate.slice(0, 10)}</p>
 
-	<p>Written by: {frontmatter.author}</p>
+		<p>Written by: {frontmatter.author}</p>
 
-	<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+		<img
+			src={frontmatter.image.url}
+			width="300"
+			alt={frontmatter.image.alt}
+		/>
 
-	<div class="tags">
-		{
-			frontmatter.tags.map((tag: unknown) => (
-				<p class="tag">
-					<a href={`/tags/${tag}`}>{tag}</a>
-				</p>
-			))
-		}
+		<div class="tags">
+			{
+				frontmatter.tags.map((tag: unknown) => (
+					<p class="tag">
+						<a href={`/tags/${tag}`}>{tag}</a>
+					</p>
+				))
+			}
+		</div>
 	</div>
-
 	<slot />
 </BaseLayout>
 <style>
+	@font-face {
+		font-family: "DotGothic16";
+		src: url("/fonts/DotGothic16-Regular.ttf");
+	}
 	a {
 		color: #00539f;
 	}
@@ -41,5 +50,13 @@ const { frontmatter } = Astro.props;
 		padding: 0.5em 1em;
 		font-size: 1.15em;
 		background-color: #f8fcfd;
+	}
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		text-align: center;
+		font-family: "DotGothic16", sans-serif;
+		margin-top: 15%;
 	}
 </style>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Works";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<div class="main">
+		<p class="Keytext">工事中ダヨ</p>
+	</div>
+</BaseLayout>
+
+<style>
+	@font-face {
+		font-family: "DotGothic16";
+		src: url("/fonts/DotGothic16-Regular.ttf");
+	}
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		text-align: center;
+		font-family: "DotGothic16", sans-serif;
+	}
+	.Keytext {
+		font-size: 2.4rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.4px;
+		margin-top: 15%;
+	}
+</style>
