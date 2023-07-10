@@ -11,19 +11,17 @@ body {
 	line-height: 1.5;
 }
 
-* {
-	box-sizing: border-box;
-}
-
-h1 {
-	margin: 1rem 0;
-	font-size: 2.5rem;
+.header {
+	position: relative;
 }
 
 .logo {
-	display: inline-block;
 	padding: 15px 0px;
-	align-items: center;
+	position: fixed;
+	top: 10px;
+	left: 20px;
+	border-bottom: 4px solid black;
+	width: 3000px;
 }
 
 .namelogo {
@@ -32,6 +30,9 @@ h1 {
 	text-decoration: none;
 	font-size: 2.5rem;
 	font-weight: bold;
+	position: fixed;
+	top: 8px;
+	left: 40px;
 }
 
 .namelogo p {
@@ -44,9 +45,6 @@ h1 {
 
 .wrapper {
 	display: flex;
-	gap: var(--spacing-1);
-	border-bottom: 4px solid black;
-	width: 100vw;
 }
 
 
@@ -95,12 +93,12 @@ a:focus {
 	display: unset;
 }
 
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 800px) {
 	.nav-links {
 		margin-right: 5px;
-		display: block;
-		position: absolute;
-		top: 20px;
+		display: inline-block;
+		position: fixed;
+		top: 10px;
 		right: 0px;
 		background: none;
 		border: none;
