@@ -1,75 +1,72 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "About Me";
+const pageTitle = "About";
 const identity = {
-	firstName: "Sarah",
-	country: "Canada",
-	occupation: "Technical Writer",
-	hobbies: ["photography", "birdwatching", "baseball"],
+	firstName: "nimoca",
+	country: "Japan",
+	occupation: "College Student",
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const skills = ["JavaScript", "React", "Python", "Japanese", "English"];
+const qualifications = [
+	"KANKEN Level 3",
+	"Ordinary car first class driver's license",
+	"TOEIC 満点",
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<style define:vars={{ skillColor, fontWeight, textCase }}>
-		h1 {
-			color: purple;
-			font-size: 4rem;
-		}
-		.skill {
-			color: var(--skillColor);
-			font-weight: var(--fontWeight);
-			text-transform: var(--textCase);
-		}
-	</style>
-	<h2>... and my new Astro site!</h2>
-
-	<p>
-		I am working through Astro's introductory tutorial. This is the second
-		page on my website, and it's the first one I built myself!
-	</p>
-
-	<p>
-		This site will update as I complete more of the tutorial, so keep
-		checking back and see how my journey is going!
-	</p>
-	<p>Here are a few facts about me:</p>
-	<ul>
-		<li>My name is {identity.firstName}.</li>
-		<li>
-			I live in {identity.country} and I work as a {identity.occupation}.
-		</li>
-		{
-			identity.hobbies.length >= 2 && (
-				<li>
-					Two of my hobbies are: {identity.hobbies[0]} and{" "}
-					{identity.hobbies[1]}
-				</li>
-			)
-		}
-	</ul>
-	<p>My skills are:</p>
-	<ul>
-		{skills.map((skill) => <li class="skill">{skill}</li>)}
-	</ul>
-	{happy && <p>I am happy to be learning Astro!</p>}
-
-	{finished && <p>I finished this tutorial!</p>}
-
-	{
-		goal === 3 ? (
-			<p>My goal is to finish in 3 days.</p>
-		) : (
-			<p>My goal is not 3 days.</p>
-		)
-	}
+	<div class="main">
+		<p class="Keytext">
+			<span class="firstName">{identity.firstName}</span>'s Profile.<br />
+			{identity.occupation}.
+		</p>
+		<p class="Subtext">Language</p>
+		<ul class="items">
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+		<p class="Subtext">Qualification</p>
+		<ul class="items">
+			{
+				qualifications.map((qualification) => (
+					<li class="qualification">{qualification}</li>
+				))
+			}
+		</ul>
+	</div>
 </BaseLayout>
+
+<style>
+	@font-face {
+		font-family: "DotGothic16";
+		src: url("/fonts/DotGothic16-Regular.ttf");
+	}
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		text-align: center;
+		font-family: "DotGothic16", sans-serif;
+	}
+	.Keytext {
+		font-size: 2.4rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.4px;
+		margin-top: 5%;
+	}
+	.firstName {
+		color: #423ceb;
+	}
+	.Subtext {
+		font-size: 1.6rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.4px;
+	}
+	.items {
+		justify-content: center;
+		gap: 1.6rem;
+	}
+</style>

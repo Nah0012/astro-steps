@@ -1,8 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home Page";
+import Greeting from "../components/greeting/Greeting.jsx";
+const pageTitle = "nimoca's HomePage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>My awesome blog subtitle</h2>
+	<img src="../assets/myicon.png" alt="myicon" />
+	<Greeting
+		client:load
+		messages={[
+			"やあ",
+			"夏はジメッとしてるから嫌だね",
+			"全身がポタキになった",
+			"そうだよ",
+			"デカい礎、デカいしづえ",
+		]}
+	/>
 </BaseLayout>
+
+<style>
+	img {
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+		height: 50%;
+		border-radius: 50%;
+		margin-top: 30px;
+	}
+</style>

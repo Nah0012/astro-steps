@@ -20,6 +20,37 @@ h1 {
 	font-size: 2.5rem;
 }
 
+.logo {
+	display: inline-block;
+	padding: 15px 0px;
+	align-items: center;
+}
+
+.namelogo {
+	display: inline-block;
+	padding: 0px 20px;
+	text-decoration: none;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.namelogo p {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.wrapper {
+	display: flex;
+	gap: var(--spacing-1);
+	border-bottom: 4px solid black;
+	width: 100vw;
+}
+
+
+
 /* nav styles */
 
 .hamburger {
@@ -32,22 +63,23 @@ h1 {
 	width: 40px;
 	height: 5px;
 	margin-bottom: 10px;
-	background-color: #ff9776;
+	background-color: #bceef3;
 }
 
 .nav-links {
-	width: 100%;
-	top: 5rem;
-	left: 48px;
-	background-color: #ff9776;
+	position: fixed;
+	top: 4rem;
+	right: 25px;
+	background-color: #bfe9ee;
 	display: none;
 	margin: 0;
+	border: thick double #32a1ce;
 }
 
 .nav-links a {
 	display: block;
 	text-align: center;
-	padding: 10px 0;
+	padding: 10px 20px;
 	text-decoration: none;
 	font-size: 1.2rem;
 	font-weight: bold;
@@ -56,7 +88,7 @@ h1 {
 
 .nav-links a:hover,
 a:focus {
-	background-color: #ff9776;
+	background-color: #79afba;
 }
 
 .expanded {
@@ -65,11 +97,13 @@ a:focus {
 
 @media screen and (min-width: 636px) {
 	.nav-links {
-		margin-left: 5em;
+		margin-right: 5px;
 		display: block;
-		position: static;
-		width: auto;
+		position: absolute;
+		top: 20px;
+		right: 0px;
 		background: none;
+		border: none;
 	}
 
 	.nav-links a {
@@ -80,4 +114,14 @@ a:focus {
 	.hamburger {
 		display: none;
 	}
+}
+
+
+html.dark {
+	background-color: #0d0950;
+	color: #fff;
+}
+
+.dark .nav-links a {
+	color: #fff;
 }
