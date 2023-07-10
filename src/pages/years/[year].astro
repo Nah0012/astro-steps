@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+
+export async function getStaticPaths() {
+	const allPosts = await Astro.glob("../posts/*.md");
+
+	const uniqueyears = [
+		...new Set(allPosts.map((post) => post.frontmatter.years).flat()),
+	];
+
+	return uniqueyears.map((year) => {
+		const filteredPosts = allPosts.filter((post) =>
+			post.frontmatter.years.includes(year)
+		);
+		return {
+			params: { year },
+			props: { posts: filteredPosts },
+		};
+	});
+}
+
+const { year } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={year}>
+	<div class="main">
+		<p>Posts in {year}</p>
+		<ul>
+			{
+				posts.map((post: { url: any; frontmatter: { title: any } }) => (
+					<BlogPost url={post.url} title={post.frontmatter.title} />
+				))
+			}
+		</ul>
+	</div>
+</BaseLayout>
+
+<style>
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		text-align: center;
+		font-family: "DotGothic16", sans-serif;
+		margin-top: 15%;
+	}
+</style>

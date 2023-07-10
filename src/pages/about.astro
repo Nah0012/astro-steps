@@ -12,7 +12,6 @@ const skills = ["JavaScript", "React", "Python", "Japanese", "English"];
 const qualifications = [
 	"KANKEN Level 3",
 	"Ordinary car first class driver's license",
-	"TOEIC 合格",
 ];
 ---
 
@@ -33,9 +32,21 @@ const qualifications = [
 					<li class="qualification">{qualification}</li>
 				))
 			}
+			<li class="TOEIC">TOEIC 合格</li>
 		</ul>
 	</div>
 </BaseLayout>
+
+<audio id="wakatte_audio">
+	<source src="./assets/audiostock75515.mp3" type="audio/mp3" />
+</audio>
+
+<script is:inline>
+document.querySelector(".TOEIC").addEventListener("click", () => {
+	document.getElementById("wakatte_audio").currentTime = 0; //連続クリックに対応
+	document.getElementById("wakatte_audio").play(); //クリックしたら音を再生
+});
+</script>
 
 <style>
 	@font-face {
