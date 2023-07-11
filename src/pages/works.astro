@@ -11,7 +11,7 @@ const pageTitle = "Works";
 			id="inlineFrameExample"
 			title="Inline Frame Example"
 			width="auto"
-			height="800"
+			height="350"
 			src="../Dino.html"
 		>
 		</iframe>
@@ -36,5 +36,11 @@ const pageTitle = "Works";
 		line-height: 1.2;
 		letter-spacing: 0.4px;
 		margin-top: 20%;
+	}
+	@media screen and (max-width: 600px) {
+		.main {
+			transform: translateY(70px);
+			transition: transform 2s;
+		}
 	}
 </style>

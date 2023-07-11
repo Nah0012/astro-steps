@@ -3,7 +3,7 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={frontmatter.title} class="post">
 	<div class="head">
 		<p class="title">{frontmatter.title}</p>
 		<div class="discriptions">
@@ -47,6 +47,16 @@ const { frontmatter } = Astro.props;
 		margin-left: 2%;
 		font-family: "KiwiMaru", sans-serif;
 	}
+	@media screen and (max-width: 600px) {
+		.head {
+			transform: translateY(70px);
+			transition: transform 2s;
+		}
+		.main-text {
+			transform: translateY(70px);
+			transition: transform 2s;
+		}
+	}
 	.title {
 		font-size: 2.4rem;
 		color: #00539f;
@@ -64,6 +74,7 @@ const { frontmatter } = Astro.props;
 		margin-top: 50px;
 		margin-left: 2%;
 		margin-right: 2%;
+		margin-bottom: 75px;
 		font-size: 1.2rem;
 		line-height: 2rem;
 		font-family: "KiwiMaru", sans-serif;

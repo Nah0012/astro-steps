@@ -92,16 +92,17 @@ const pageTitle = "nimoca's Blog";
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 10px;
+		margin-bottom: 70px;
 	}
 	@media screen and (max-width: 1200px) {
 		.posts {
 			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		}
 	}
-	@media screen and (max-width: 800px) {
-		.Keytext {
-			margin-top: 30%;
-			transition: magin-top 2s;
+	@media screen and (max-width: 600px) {
+		.main {
+			transform: translateY(70px);
+			transition: transform 2s;
 		}
 	}
 	.rss {
