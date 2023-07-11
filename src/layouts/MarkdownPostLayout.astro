@@ -4,13 +4,13 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title} class="post">
-	<div class="head">
-		<p class="title">{frontmatter.title}</p>
-		<div class="discriptions">
-			<p class="date">
+	<div class="md-head">
+		<p class="md-title">{frontmatter.title}</p>
+		<div class="md-discriptions">
+			<p class="md-date">
 				created at: {frontmatter.pubDate.toDateString()}
 			</p>
-			<p class="tags">
+			<p class="md-tags">
 				tags: {
 					frontmatter.tags.map((tag: unknown) => (
 						<a href={`/tags/${tag}`}>[{tag}]</a>
@@ -24,59 +24,5 @@ const { frontmatter } = Astro.props;
 			alt={frontmatter.image.alt}
 		/>
 	</div>
-	<div class="main-text"><slot /></div>
+	<slot />
 </BaseLayout>
-<style>
-	@font-face {
-		font-family: "DotGothic16";
-		src: url("/fonts/DotGothic16-Regular.ttf");
-	}
-	a {
-		color: #00539f;
-	}
-	@font-face {
-		font-family: "KiwiMaru";
-		src: url("/fonts/KiwiMaru-Medium.ttf");
-	}
-	.head {
-		display: flex;
-		flex-direction: column;
-		text-align: left;
-		font-family: "DotGothic16", sans-serif;
-		margin-top: 20%;
-		margin-left: 2%;
-		font-family: "KiwiMaru", sans-serif;
-	}
-	@media screen and (max-width: 480px) {
-		.head {
-			transform: translateY(70px);
-			transition: transform 2s;
-		}
-		.main-text {
-			transform: translateY(70px);
-			transition: transform 2s;
-			margin-bottom: 75px;
-		}
-	}
-	.title {
-		font-size: 2.4rem;
-		color: #00539f;
-	}
-	.discriptions {
-		font-size: 1.2rem;
-		margin-top: 10px;
-		margin-bottom: 50px;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0px 20px;
-	}
-
-	.main-text {
-		margin-top: 50px;
-		margin-left: 2%;
-		margin-right: 2%;
-		font-size: 1.2rem;
-		line-height: 2rem;
-		font-family: "KiwiMaru", sans-serif;
-	}
-</style>

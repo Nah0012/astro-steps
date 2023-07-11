@@ -149,3 +149,63 @@ html.dark {
 a:focus {
 	background-color: #1d2c2f;
 }
+
+@font-face {
+	font-family: "DotGothic16";
+	src: url("/fonts/DotGothic16-Regular.ttf");
+}
+
+a {
+	color: #00539f;
+}
+
+@font-face {
+	font-family: "KiwiMaru";
+	src: url("/fonts/KiwiMaru-Medium.ttf");
+}
+
+.md-head {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	font-family: "DotGothic16", sans-serif;
+	margin-top: 20%;
+	margin-left: 2%;
+	font-family: "KiwiMaru", sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+	.md-head {
+		transform: translateY(70px);
+		transition: transform 2s;
+	}
+
+	.md-text {
+		transform: translateY(70px);
+		transition: transform 2s;
+		margin-bottom: 75px;
+	}
+}
+
+.md-title {
+	font-size: 2.4rem;
+	color: #00539f;
+}
+
+.md-discriptions {
+	font-size: 1.2rem;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0px 20px;
+}
+
+.md-text {
+	margin-top: 50px;
+	margin-left: 2%;
+	margin-right: 2%;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	font-family: "KiwiMaru", sans-serif;
+}
