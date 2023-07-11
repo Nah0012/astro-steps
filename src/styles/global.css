@@ -16,23 +16,26 @@ body {
 }
 
 .logo {
-	padding: 15px 0px;
+	padding: 25px 30px;
 	position: fixed;
-	top: 10px;
-	left: 20px;
+	top: 0px;
+	left: 0px;
 	border-bottom: 4px solid black;
 	width: 3000px;
+	background-color: #f1f5f9;
+	z-index: 1;
 }
 
 .namelogo {
 	display: inline-block;
-	padding: 0px 20px;
+	padding: 0px 30px;
 	text-decoration: none;
 	font-size: 2.5rem;
 	font-weight: bold;
 	position: fixed;
 	top: 8px;
 	left: 40px;
+	z-index: 1;
 }
 
 .namelogo p {
@@ -66,12 +69,14 @@ body {
 
 .nav-links {
 	position: fixed;
-	top: 4rem;
-	right: 25px;
-	background-color: #bfe9ee;
+	top: 100px;
+	right: 15px;
+	background-color: #f1f5f9;
 	display: none;
 	margin: 0;
-	border: thick double #32a1ce;
+	border: thick double #000000;
+	z-index: 1;
+
 }
 
 .nav-links a {
@@ -86,7 +91,8 @@ body {
 
 .nav-links a:hover,
 a:focus {
-	background-color: #79afba;
+	background-color: rgb(214, 214, 214);
+	transition: background-color 0.3s ease-out;
 }
 
 .expanded {
@@ -102,11 +108,14 @@ a:focus {
 		right: 0px;
 		background: none;
 		border: none;
+		z-index: 1;
 	}
 
 	.nav-links a {
 		display: inline-block;
 		padding: 15px 20px;
+		border-radius: 20px;
+
 	}
 
 	.hamburger {
@@ -115,6 +124,14 @@ a:focus {
 }
 
 
+@media screen and (max-width: 799px) {
+	.dark .nav-links {
+		background-color: #000000;
+		border: thick double #ffffff;
+	}
+
+}
+
 html.dark {
 	background-color: #0d0950;
 	color: #fff;
@@ -122,4 +139,13 @@ html.dark {
 
 .dark .nav-links a {
 	color: #fff;
+}
+
+.dark .logo {
+	background-color: #000000;
+}
+
+.dark .nav-links a:hover,
+a:focus {
+	background-color: #1d2c2f;
 }

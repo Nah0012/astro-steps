@@ -1,5 +1,96 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, pubDate, image, tags } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<a href={url} class="card">
+	<figure class="imageWrapper">
+		<img class="card-image" src={image.url} width="300" alt={image.alt} />
+	</figure>
+	<div class="card-content">
+		<p class="card-title">{title}</p>
+		<div class="category">
+			{tags.map((tag: unknown) => <p class="card-tags">{tag}</p>)}
+		</div>
+		<p class="card-date">{pubDate}</p>
+	</div>
+</a>
+
+<style>
+	.card {
+		display: flex;
+		flex-direction: column;
+		height: 180px;
+		border-radius: 20px;
+		position: relative;
+		background-color: rgba(0, 19, 25, 0.72);
+		transition: background-color 0.3s ease-out;
+	}
+	.card:hover {
+		background-color: rgba(0, 19, 25, 0.88);
+	}
+	.imageWrapper {
+		border-radius: 20px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+	}
+	.card-image {
+		border-radius: 20px;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	.card-content {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 10px;
+	}
+	.card-title {
+		display: flex;
+		margin-top: auto;
+		font-weight: bold;
+		margin-left: 5px;
+		margin-bottom: 5px;
+		position: relative;
+		z-index: 1;
+		letter-spacing: 0.4px;
+		color: rgba(255, 255, 255, 0.805);
+	}
+	.category {
+		display: flex;
+		gap: 5px;
+		margin-bottom: 5px;
+		z-index: 1;
+	}
+	.card-tags {
+		padding: 0 10px;
+		font-size: 10px;
+		border-radius: 5px;
+		background-color: rgba(0, 19, 25, 0.64);
+		color: rgba(255, 255, 255, 0.805);
+		letter-spacing: 0.4px;
+		height: 24px;
+		line-height: 24px;
+	}
+	.card-date {
+		display: flex;
+		margin-top: auto;
+		margin-left: 5px;
+		margin-bottom: 5px;
+		font-size: 10px;
+		z-index: 1;
+		letter-spacing: 0.4px;
+		color: rgba(255, 255, 255, 0.805);
+	}
+	@media screen and (max-width: 1200px) {
+		.card {
+			padding: calc(20px + 10px);
+			overflow: auto;
+		}
+	}
+</style>

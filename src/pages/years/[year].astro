@@ -26,24 +26,66 @@ const { posts } = Astro.props;
 
 <BaseLayout pageTitle={year}>
 	<div class="main">
-		<p>Posts in {year}</p>
-		<ul>
+		<p class="Keytext">nimoca's Blog in {year}.</p>
+
+		<div class="posts">
 			{
-				posts.map((post: { url: any; frontmatter: { title: any } }) => (
-					<BlogPost url={post.url} title={post.frontmatter.title} />
-				))
+				posts.map(
+					(post: {
+						url: any;
+						frontmatter: {
+							title: any;
+							pubDate: string | any[];
+							image: any;
+							tags: any;
+						};
+					}) => (
+						<BlogPost
+							url={post.url}
+							title={post.frontmatter.title}
+							pubDate={post.frontmatter.pubDate.slice(0, 10)}
+							image={post.frontmatter.image}
+							tags={post.frontmatter.tags}
+						/>
+					)
+				)
 			}
-		</ul>
+		</div>
+		<button class="back" type="button" onclick="
+		history.back()
+		">戻る</button
+		>
 	</div>
 </BaseLayout>
 
 <style>
+	@font-face {
+		font-family: "DotGothic16";
+		src: url("/fonts/DotGothic16-Regular.ttf");
+	}
 	.main {
 		display: flex;
 		flex-direction: column;
 		gap: 1.6rem;
 		text-align: center;
 		font-family: "DotGothic16", sans-serif;
-		margin-top: 15%;
+	}
+	.Keytext {
+		font-size: 2.4rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.4px;
+		margin-top: 20%;
+		text-align: center;
+	}
+	.posts {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 10px;
+	}
+	@media screen and (max-width: 1200px) {
+		.posts {
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		}
 	}
 </style>
