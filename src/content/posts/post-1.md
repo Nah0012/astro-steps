@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "初めての記事"
 pubDate: 1890-07-11
 image:

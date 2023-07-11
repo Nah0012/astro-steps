@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
 		<p class="title">{frontmatter.title}</p>
 		<div class="discriptions">
 			<p class="date">
-				created at: {frontmatter.pubDate.slice(0, 10)}
+				created at: {frontmatter.pubDate.toDateString()}
 			</p>
 			<p class="tags">
 				tags: {

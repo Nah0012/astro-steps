@@ -1,17 +1,18 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
 export async function getStaticPaths() {
-	const allPosts = await Astro.glob("../posts/*.md");
+	const allPosts = await getCollection("posts");
 
 	const uniqueyears = [
-		...new Set(allPosts.map((post) => post.frontmatter.years).flat()),
+		...new Set(allPosts.map((post) => post.data.years).flat()),
 	];
 
 	return uniqueyears.map((year) => {
 		const filteredPosts = allPosts.filter((post) =>
-			post.frontmatter.years.includes(year)
+			post.data.years.includes(year)
 		);
 		return {
 			params: { year },
@@ -41,20 +42,19 @@ const { posts } = Astro.props;
 						};
 					}) => (
 						<BlogPost
-							url={post.url}
-							title={post.frontmatter.title}
-							pubDate={post.frontmatter.pubDate.slice(0, 10)}
-							image={post.frontmatter.image}
-							tags={post.frontmatter.tags}
+							url={"/posts/" + post.slug}
+							title={post.data.title}
+							pubDate={post.data.pubDate.toDateString()}
+							image={post.data.image}
+							tags={post.data.tags}
 						/>
 					)
 				)
 			}
 		</div>
 		<button class="back" type="button" onclick="
-		history.back()
-		">戻る</button
-		>
+		istory.back()
+		">戻る</button>
 	</div>
 </BaseLayout>
 

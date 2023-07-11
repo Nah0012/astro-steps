@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "シャドバスキー"
 pubDate: 2023-07-12
 image:

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "なんだこれ"
 pubDate: 2023-07-11
 image:

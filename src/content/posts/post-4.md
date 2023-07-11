@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "2レジ誤差13万出ました"
 pubDate: 2024-12-24
 image:
