@@ -1,4 +1,4 @@
-<footer>
+<div class="footer">
 	<button id="social">
 		<img src="../assets/twitter.svg" class="twitter" />
 	</button>
@@ -10,7 +10,7 @@
 	<button id="social">
 		<img src="../assets/youtube.svg" class="youtube" />
 	</button>
-</footer>
+</div>
 
 <script is:inline>
 document.querySelector(".twitter").addEventListener("click", () => {
@@ -23,3 +23,17 @@ document.querySelector(".youtube").addEventListener("click", () => {
 	window.open("https://www.youtube.com/channel/UCkPhQEwdob-Dc539qnJASvg");
 });
 </script>
+
+<style>
+	.footer {
+		width: 100%;
+		position: relative;
+		text-align: center;
+		justify-content: center;
+		letter-spacing: 1em;
+	}
+
+	.social {
+		display: inline-block;
+	}
+</style>

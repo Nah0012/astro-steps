@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "My First Blog Post"
-pubDate: 2021-07-01
-description: "This is the first post of my new Astro blog."
+title: "初めての記事"
+pubDate: 1890-07-11
 image:
-    url: "https://docs.astro.build/assets/full-logo-light.png"
-    alt: "The full Astro logo."
-tags: ["astro", "blogging"]
-years: ["2021"]
+    url: "../images/boy.png"
+    alt: "The Boy"
+tags: ["Tech", "Design"]
+years: ["1890"]
+body:
 ---
 
 # My First Blog Post
