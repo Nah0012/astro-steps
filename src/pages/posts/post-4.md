@@ -1,13 +1,12 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Fourth Blog Post
-description: "This post will show up on its own!"
+title: "2レジ誤差13万出ました"
+pubDate: 2024-12-24
 image:
-    url: "https://docs.astro.build/default-og-image.png"
-    alt: "The word “astro” against an illustration of planets and stars."
-pubDate: 2022-08-08
-tags: ["astro", "successes"]
-years: ["2022"]
+    url: "../images/Mario.jpg"
+    alt: "The Boy"
+tags: ["Techs"]
+years: ["2024"]
 ---
 
-This post should show up with my other blog posts, because `Astro.glob()` is returning a list of all my posts in order to create my list.
+おくすり手帳持ってきてないです

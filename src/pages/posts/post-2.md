@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Second Blog Post
-description: "After learning some Astro, I couldn't stop!"
+title: "なんだこれ"
+pubDate: 2023-07-11
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "Thumbnail of Astro arcs,"
-pubDate: 2022-07-08
-tags: ["astro", "blogging", "successes"]
-years: ["2022"]
+    url: "../images/Ramen.jpg"
+    alt: "The Boy"
+tags: ["Techs", "Others"]
+years: ["2023"]
 ---
 
-After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
+なんだこれ？
+美味しそう～

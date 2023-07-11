@@ -5,23 +5,12 @@ pubDate: 1890-07-11
 image:
     url: "../images/boy.png"
     alt: "The Boy"
-tags: ["Tech", "Design"]
+tags: ["Techs", "Design"]
 years: ["1890"]
-body:
 ---
 
-# My First Blog Post
+# 記事だね ← タイトル
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+## 初めまして。これはテストです。
 
-## What I've accomplished
-
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+男の子は笑顔でこちらを見つめます。
