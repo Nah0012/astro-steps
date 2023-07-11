@@ -47,7 +47,7 @@ const { frontmatter } = Astro.props;
 		margin-left: 2%;
 		font-family: "KiwiMaru", sans-serif;
 	}
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 480px) {
 		.head {
 			transform: translateY(70px);
 			transition: transform 2s;
@@ -55,6 +55,7 @@ const { frontmatter } = Astro.props;
 		.main-text {
 			transform: translateY(70px);
 			transition: transform 2s;
+			margin-bottom: 75px;
 		}
 	}
 	.title {
@@ -74,7 +75,6 @@ const { frontmatter } = Astro.props;
 		margin-top: 50px;
 		margin-left: 2%;
 		margin-right: 2%;
-		margin-bottom: 75px;
 		font-size: 1.2rem;
 		line-height: 2rem;
 		font-family: "KiwiMaru", sans-serif;

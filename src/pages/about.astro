@@ -59,8 +59,14 @@ document.querySelector(".TOEIC").addEventListener("click", () => {
 		gap: 1.6rem;
 		text-align: center;
 		font-family: "DotGothic16", sans-serif;
-		position: absolute;
-		top: 20%;
+		margin-top: 20%;
+	}
+	@media screen and (max-width: 480px) {
+		.main {
+			transform: translateY(70px);
+			transition: transform 2s;
+			margin-bottom: 75px;
+		}
 	}
 	.Keytext {
 		font-size: 2.4rem;
