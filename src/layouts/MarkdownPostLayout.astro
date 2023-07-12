@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
 		<p class="title">{frontmatter.title}</p>
 		<div class="discriptions">
 			<p class="date">
-				created at: {frontmatter.pubDate.toDateString()}
+				created at: {frontmatter.pubDate.toLocaleDateString("en-US")}
 			</p>
 			<p class="tags">
 				tags: {
@@ -25,6 +25,9 @@ const { frontmatter } = Astro.props;
 		/>
 	</div>
 	<div class="main-text"><slot /></div>
+	<button class="back" type="button" onclick="
+	history.back()
+	">戻る</button>
 </BaseLayout>
 <style>
 	@font-face {
@@ -43,7 +46,7 @@ const { frontmatter } = Astro.props;
 		flex-direction: column;
 		text-align: left;
 		font-family: "DotGothic16", sans-serif;
-		margin-top: 20%;
+		margin-top: 10%;
 		margin-left: 2%;
 		font-family: "KiwiMaru", sans-serif;
 	}
@@ -61,22 +64,39 @@ const { frontmatter } = Astro.props;
 	.title {
 		font-size: 2.4rem;
 		color: #00539f;
+		margin-bottom: auto;
 	}
 	.discriptions {
 		font-size: 1.2rem;
-		margin-top: 10px;
+		margin-top: 0;
 		margin-bottom: 50px;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0px 20px;
 	}
+	.date {
+		margin-bottom: 0;
+	}
 
 	.main-text {
 		margin-top: 50px;
 		margin-left: 2%;
-		margin-right: 2%;
+		margin-right: 10%;
 		font-size: 1.2rem;
 		line-height: 2rem;
 		font-family: "KiwiMaru", sans-serif;
+	}
+	.back {
+		display: flex;
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 30px;
+		text-align: center;
+		font-family: "DotGothic16", sans-serif;
+		font-size: large;
+		background-color: #f1f5f900;
+		border-color: #f1f5f900;
+		cursor: pointer;
 	}
 </style>

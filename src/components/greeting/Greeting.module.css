@@ -1,19 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap');
 
+
 .greeting {
 	display: flex;
 	margin-top: 15px;
 	position: relative;
-	width: 100%;
+	width: auto;
 	justify-content: center;
 	font-family: 'DotGothic16', sans-serif;
 }
 
 .button {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
+	width: auto;
 	font-family: 'Aoboshi One', serif;
+	background-color: #f1f5f900;
+	border-color: #f9f5f100;
+	color: rgb(218, 142, 2);
+	cursor: pointer;
 }

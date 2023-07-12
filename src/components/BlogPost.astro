@@ -4,7 +4,13 @@ const { title, url, pubDate, image, tags } = Astro.props;
 
 <a href={url} class="card">
 	<figure class="imageWrapper">
-		<img class="card-image" src={image.url} width="300" alt={image.alt} />
+		<img
+			class="card-image"
+			src={image.url}
+			width="100%"
+			height="100%"
+			alt={image.alt}
+		/>
 	</figure>
 	<div class="card-content">
 		<p class="card-title">{title}</p>
@@ -31,17 +37,16 @@ const { title, url, pubDate, image, tags } = Astro.props;
 	.imageWrapper {
 		border-radius: 20px;
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		top: -1rem;
+		bottom: -1rem;
+		left: -2.5rem;
+		right: -2.5rem;
 		z-index: -1;
+		overflow: hidden;
 	}
 	.card-image {
 		border-radius: 20px;
 		object-fit: cover;
-		width: 100%;
-		height: 100%;
 	}
 	.card-content {
 		position: absolute;

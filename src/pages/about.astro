@@ -16,24 +16,24 @@ const qualifications = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class="main">
+	<div class="about">
 		<p class="Keytext">
 			<span class="firstName">{identity.firstName}</span>'s Profile.<br />
 			{identity.occupation}.
 		</p>
 		<p class="Subtext">Language</p>
-		<ul class="items">
-			{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
+		<list class="items">
+			{skills.map((skill) => <p class="skill">{skill}</p>)}
+		</list>
 		<p class="Subtext">Qualification</p>
-		<ul class="items">
+		<list class="items">
 			{
 				qualifications.map((qualification) => (
-					<li class="qualification">{qualification}</li>
+					<p class="qualification">{qualification}</p>
 				))
 			}
-			<li class="TOEIC">TOEIC 合格</li>
-		</ul>
+			<toeic class="TOEIC">TOEIC 合格</toeic>
+		</list>
 	</div>
 </BaseLayout>
 
@@ -53,19 +53,18 @@ document.querySelector(".TOEIC").addEventListener("click", () => {
 		font-family: "DotGothic16";
 		src: url("/fonts/DotGothic16-Regular.ttf");
 	}
-	.main {
+	.about {
 		display: flex;
 		flex-direction: column;
-		gap: 1.6rem;
 		text-align: center;
 		font-family: "DotGothic16", sans-serif;
-		margin-top: 20%;
+		margin-top: 10%;
+		margin-bottom: 25px;
 	}
 	@media screen and (max-width: 480px) {
-		.main {
-			transform: translateY(70px);
+		.about {
+			transform: translateY(45px);
 			transition: transform 2s;
-			margin-bottom: 75px;
 		}
 	}
 	.Keytext {
@@ -78,6 +77,7 @@ document.querySelector(".TOEIC").addEventListener("click", () => {
 		color: #423ceb;
 	}
 	.Subtext {
+		margin-top: auto;
 		font-size: 1.6rem;
 		font-weight: 700;
 		line-height: 1.2;
@@ -85,6 +85,16 @@ document.querySelector(".TOEIC").addEventListener("click", () => {
 	}
 	.items {
 		justify-content: center;
-		gap: 1.6rem;
+	}
+	.skill {
+		margin-top: auto;
+	}
+	.qualification {
+		margin-top: auto;
+	}
+	.TOEIC {
+		margin-left: auto;
+		margin-right: auto;
+		cursor: pointer;
 	}
 </style>

@@ -11,19 +11,16 @@ body {
 	line-height: 1.5;
 }
 
-.header {
-	position: relative;
+a {
+	color: #0000ee;
 }
 
+
 .logo {
-	padding: 25px 10px;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	border-bottom: 4px solid black;
-	width: 3000px;
-	background-color: #f1f5f9;
-	z-index: 1;
+	padding: 20px 10px;
+	background-color: #f1f5f900;
+	border-color: #f1f5f900;
+	cursor: pointer;
 }
 
 .namelogo {
@@ -33,9 +30,8 @@ body {
 	font-size: 2.5rem;
 	font-weight: bold;
 	position: fixed;
-	top: 8px;
+	top: -35px;
 	left: 40px;
-	z-index: 1;
 }
 
 .namelogo p {
@@ -47,7 +43,14 @@ body {
 }
 
 .wrapper {
-	display: flex;
+	display: inline-block;
+	background-color: #f1f5f9;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	border-bottom: 4px solid black;
+	width: 3000px;
+	z-index: 10;
 }
 
 
@@ -87,6 +90,7 @@ body {
 	font-size: 1.2rem;
 	font-weight: bold;
 	text-transform: uppercase;
+	color: #000000;
 }
 
 .nav-links a:hover,
@@ -132,6 +136,17 @@ a:focus {
 
 }
 
+.back {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	font-family: "DotGothic16", sans-serif;
+	font-size: large;
+	background-color: #f1f5f900;
+	border-color: #f1f5f900;
+	cursor: pointer;
+}
+
 html.dark {
 	background-color: #0d0950;
 	color: #fff;
@@ -142,10 +157,27 @@ html.dark {
 }
 
 .dark .logo {
-	background-color: #000000;
+	background-color: #00000000;
 }
 
 .dark .nav-links a:hover,
 a:focus {
 	background-color: #1d2c2f;
+}
+
+.dark .wrapper {
+	background-color: #0d0950;
+	border-bottom: 4px solid #fff;
+}
+
+.dark .back {
+	color: #fff;
+}
+
+.dark .footer {
+	fill: #fff;
+}
+
+.dark .rss {
+	color: #fff;
 }
