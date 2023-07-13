@@ -3,6 +3,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 const allPosts = await getCollection("posts");
+const SortedPosts = allPosts.sort((a, b) => {
+	return b.data.pubDate - a.data.pubDate;
+});
 const years = [...new Set(allPosts.map((post) => post.data.years).flat())];
 const pageTitle = "nimoca's Blog";
 ---
@@ -40,7 +43,7 @@ const pageTitle = "nimoca's Blog";
 		</div>
 		<div class="posts">
 			{
-				allPosts.map((post) => (
+				SortedPosts.map((post) => (
 					<BlogPost
 						url={"/posts/" + post.slug}
 						title={post.data.title}

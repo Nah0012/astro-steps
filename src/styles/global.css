@@ -15,6 +15,9 @@ a {
 	color: #0000ee;
 }
 
+h1 {
+	line-height: 50px;
+}
 
 .logo {
 	padding: 20px 10px;
