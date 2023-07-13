@@ -1,0 +1,23 @@
+---
+---
+
+<toeic class="TOEIC">TOEIC 合格</toeic>
+
+<audio id="wakatte_audio">
+	<source src="./assets/audiostock75515.mp3" type="audio/mp3" />
+</audio>
+
+<script is:inline>
+document.querySelector(".TOEIC").addEventListener("click", () => {
+	document.getElementById("wakatte_audio").currentTime = 0; //連続クリックに対応
+	document.getElementById("wakatte_audio").play(); //クリックしたら音を再生
+});
+</script>
+
+<style>
+	.TOEIC {
+		margin-left: auto;
+		margin-right: auto;
+		cursor: pointer;
+	}
+</style>

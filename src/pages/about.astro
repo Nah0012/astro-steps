@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TOEIC from "../components/TOEIC.astro";
 
-const pageTitle = "About";
+const pageTitle = "nimoca's Profile";
 const identity = {
 	firstName: "nimoca",
 	country: "Japan",
@@ -32,21 +33,10 @@ const qualifications = [
 					<p class="qualification">{qualification}</p>
 				))
 			}
-			<toeic class="TOEIC">TOEIC 合格</toeic>
+			<TOEIC />
 		</list>
 	</div>
 </BaseLayout>
-
-<audio id="wakatte_audio">
-	<source src="./assets/audiostock75515.mp3" type="audio/mp3" />
-</audio>
-
-<script is:inline>
-document.querySelector(".TOEIC").addEventListener("click", () => {
-	document.getElementById("wakatte_audio").currentTime = 0; //連続クリックに対応
-	document.getElementById("wakatte_audio").play(); //クリックしたら音を再生
-});
-</script>
 
 <style>
 	@font-face {
@@ -91,10 +81,5 @@ document.querySelector(".TOEIC").addEventListener("click", () => {
 	}
 	.qualification {
 		margin-top: auto;
-	}
-	.TOEIC {
-		margin-left: auto;
-		margin-right: auto;
-		cursor: pointer;
 	}
 </style>
